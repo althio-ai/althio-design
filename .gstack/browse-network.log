@@ -1,5 +1,0 @@
-[2026-08-16T13:13:18.428Z] GET file:///Users/macmini/althio-design/specimen/specimen.html → 200 (1ms, 8366B)
-[2026-08-16T13:13:18.431Z] GET file:///Users/macmini/althio-design/tokens.css → 200 (2ms, 3680B)
-[2026-08-16T13:13:18.447Z] GET https://cdn.jsdelivr.net/gh/lauridskern/open-runde@1.0.1/src/web/OpenRunde-Medium.woff2 → pending (?ms, ?B)
-[2026-08-16T13:13:18.447Z] GET https://cdn.jsdelivr.net/gh/lauridskern/open-runde@1.0.1/src/web/OpenRunde-Regular.woff2 → pending (?ms, ?B)
-[2026-08-16T13:13:18.447Z] GET https://cdn.jsdelivr.net/gh/lauridskern/open-runde@1.0.1/src/web/OpenRunde-Semibold.woff2 → pending (?ms, ?B)

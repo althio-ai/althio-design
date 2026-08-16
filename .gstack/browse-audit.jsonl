@@ -1,3 +1,0 @@
-{"ts":"2026-08-16T13:13:18.432Z","cmd":"goto","args":"file:///Users/macmini/althio-design/specimen/specimen.html","origin":"file:///Users/macmini/althio-design/specimen/specimen.html","durationMs":17,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-08-16T13:13:19.126Z","cmd":"wait","args":"--networkidle","origin":"file:///Users/macmini/althio-design/specimen/specimen.html","durationMs":646,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-08-16T13:13:19.432Z","cmd":"screenshot","args":"/Users/macmini/althio-design/assets/specimen.png --selector #sheet","origin":"file:///Users/macmini/althio-design/specimen/specimen.html","durationMs":272,"status":"ok","hasCookies":false,"mode":"launched"}

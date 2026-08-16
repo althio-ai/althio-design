@@ -1,9 +1,0 @@
-{
-  "pid": 81132,
-  "port": 44952,
-  "token": "dbc6e4eb-085a-4d28-8f91-ddd3cd0a3793",
-  "startedAt": "2026-08-16T13:13:18.289Z",
-  "serverPath": "/Users/macmini/.claude/skills/gstack/browse/src/server.ts",
-  "mode": "launched",
-  "configHash": "303a7eeccc03078b"
-}
