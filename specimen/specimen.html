@@ -23,141 +23,287 @@
   }
   .sheet > * { position: relative; }
   .eyebrow {
-    font-size: var(--text-eyebrow); font-weight: 500;
+    font-size: var(--text-caption); font-weight: 500;
     letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--color-ink-60); margin-bottom: 10px;
   }
   .title { font-family: var(--font-serif); font-size: 2.4375rem; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 6px; }
-  .subtitle { font-size: 15px; color: var(--color-ink-60); margin-bottom: 44px; }
-  section { margin-bottom: 44px; }
+  .subtitle { font-size: var(--text-sm); font-weight: 400; color: var(--color-ink-60); margin-bottom: 44px; }
+  section { margin-bottom: 48px; }
   .section-label {
-    font-size: var(--text-eyebrow); font-weight: 500; letter-spacing: 0.14em;
+    font-size: var(--text-caption); font-weight: 500; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--color-ink-34);
-    border-bottom: 1px solid rgba(35,32,28,0.12); padding-bottom: 8px; margin-bottom: 20px;
+    border-bottom: 1px solid rgba(35,32,28,0.12); padding-bottom: 8px; margin-bottom: 22px;
   }
+  .sub-label { font-size: var(--text-caption); font-weight: 600; color: var(--color-ink-60); margin: 20px 0 12px; }
+
   /* type specimens */
-  .spec { display: flex; align-items: baseline; gap: 24px; margin-bottom: 18px; }
-  .spec .meta { width: 240px; flex: none; font-size: 12px; color: var(--color-ink-60); line-height: 1.5; }
+  .spec { display: flex; align-items: baseline; gap: 24px; margin-bottom: 16px; }
+  .spec .meta { width: 235px; flex: none; font-size: 12px; color: var(--color-ink-60); line-height: 1.5; }
   .spec .meta b { color: var(--color-ink); font-weight: 600; }
   /* fluid tokens pinned to their desktop-1440 values for this fixed-width sheet */
-  .display { font-family: var(--font-serif); font-size: 4.75rem; font-weight: 500; letter-spacing: -0.025em; line-height: 1.1; }
-  .display em { font-style: italic; background: var(--gradient-accent-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .h2 { font-family: var(--font-serif); font-size: 3.0625rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
-  .h4 { font-family: var(--font-serif); font-size: var(--text-h4); font-weight: 500; letter-spacing: -0.015em; line-height: 1.25; }
-  .pull { font-family: var(--font-serif); font-size: var(--text-pull); font-style: italic; line-height: 1.35; color: var(--color-ink-72); }
-  .h5 { font-family: var(--font-serif); font-size: var(--text-h5); font-weight: 600; line-height: 1.4; }
-  .h6 { font-size: var(--text-h6); font-weight: 600; line-height: 1.55; }
-  .code { font-family: var(--font-mono); font-size: var(--text-code); line-height: 1.6; }
-  .lead { font-size: var(--text-lead); line-height: 1.5; color: var(--color-ink-60); }
-  .body { font-size: var(--text-body); line-height: 1.6; }
-  .cap { font-size: var(--text-caption); color: var(--color-ink-60); }
+  .t-display { font-family: var(--font-serif); font-size: 4.75rem; font-weight: 500; letter-spacing: -0.025em; line-height: 1.1; }
+  .t-display em { font-style: italic; background: var(--gradient-accent-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .t-h1sub { font-family: var(--font-serif); font-size: 3.8125rem; font-weight: 500; letter-spacing: -0.025em; line-height: 1.1; }
+  .t-h2 { font-family: var(--font-serif); font-size: 3.0625rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
+  .t-h3 { font-family: var(--font-serif); font-size: 2.4375rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; }
+  .t-h4 { font-family: var(--font-serif); font-size: var(--text-h4); font-weight: 500; letter-spacing: -0.015em; line-height: 1.25; }
+  .t-pull { font-family: var(--font-serif); font-size: var(--text-pull); font-style: italic; line-height: 1.35; color: var(--color-ink-72); }
+  .t-h5 { font-family: var(--font-serif); font-size: var(--text-h5); font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; }
+  .t-h6 { font-size: var(--text-h6); font-weight: 600; line-height: 1.55; }
+  .t-lead { font-size: var(--text-lead); line-height: 1.5; color: var(--color-ink-60); }
+  .t-body { font-size: var(--text-body); line-height: 1.6; }
+  .t-sm { font-size: var(--text-sm); font-weight: 500; line-height: 1.55; }
+  .t-caption { font-size: var(--text-caption); line-height: 1.5; color: var(--color-ink-60); }
+  .t-subcaption { font-size: var(--text-caption); line-height: 1.5; color: var(--color-ink-34); }
+  .t-code { font-family: var(--font-mono); font-size: var(--text-code); line-height: 1.6; }
+  .t-link { font-size: var(--text-body); color: var(--color-ink); }
+  .t-link .arrow { color: var(--color-ink-60); }
+
   /* swatches */
   .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px 12px; }
-  .chip { height: 72px; border-radius: var(--radius-tile); border: 1px solid rgba(35,32,28,0.08); margin-bottom: 8px; }
-  .swatch .name { font-size: 12.5px; font-weight: 600; }
-  .swatch .hex { font-size: 11.5px; color: var(--color-ink-60); }
+  .chip { height: 64px; border-radius: var(--radius-tile); border: 1px solid rgba(35,32,28,0.08); margin-bottom: 8px; }
+  .name { font-size: var(--text-caption); font-weight: 600; }
+  .hex { font-size: 11.5px; color: var(--color-ink-60); }
+  .roles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .role { border: 1px solid rgba(35,32,28,0.08); border-radius: var(--radius-tile); padding: 12px 14px; background: #fff; }
+  .role.dark { background: var(--color-night); border-color: transparent; }
+  .role p:first-child { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+  .role .tok { font-family: var(--font-mono); font-size: 10.5px; color: var(--color-ink-34); }
+  .role.dark .tok { color: rgba(237,241,250,0.5); }
+
   /* gradients */
   .grads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .grad { height: 96px; border-radius: var(--radius-panel); border: 1px solid rgba(35,32,28,0.08); position: relative; overflow: hidden; margin-bottom: 8px; }
-  .gradwrap .name { font-size: 12.5px; font-weight: 600; }
-  .gradwrap .hex { font-size: 11.5px; color: var(--color-ink-60); }
+  .grad { height: 88px; border-radius: var(--radius-panel); border: 1px solid rgba(35,32,28,0.08); position: relative; overflow: hidden; margin-bottom: 8px; }
   .g-aurora { background-color: var(--color-paper); background-image: var(--gradient-aurora); }
   .g-text { background: var(--gradient-accent-text); }
   .g-night {
     background-color: var(--color-night);
     background-image:
       radial-gradient(1px 1px at 38px 22px, rgba(255,255,255,0.85), transparent 100%),
-      radial-gradient(1px 1px at 176px 68px, rgba(255,255,255,0.6), transparent 100%),
-      radial-gradient(1.5px 1.5px at 296px 34px, rgba(255,255,255,0.75), transparent 100%),
-      radial-gradient(1px 1px at 108px 50px, rgba(255,255,255,0.7), transparent 100%),
-      radial-gradient(1.5px 1.5px at 240px 80px, rgba(255,255,255,0.5), transparent 100%),
+      radial-gradient(1px 1px at 176px 60px, rgba(255,255,255,0.6), transparent 100%),
+      radial-gradient(1.5px 1.5px at 296px 30px, rgba(255,255,255,0.75), transparent 100%),
+      radial-gradient(1px 1px at 108px 44px, rgba(255,255,255,0.7), transparent 100%),
+      radial-gradient(1.5px 1.5px at 240px 72px, rgba(255,255,255,0.5), transparent 100%),
       var(--gradient-night-veil);
   }
   .g-night::after {
-    content: ""; position: absolute; left: 8%; right: 8%; bottom: 14px; height: 1px;
+    content: ""; position: absolute; left: 8%; right: 8%; bottom: 12px; height: 1px;
     background: var(--gradient-hairline);
   }
+
+  /* spacing */
+  .space-row { display: flex; align-items: flex-end; gap: 20px; }
+  .space-item { text-align: left; }
+  .space-bar { background: var(--color-sky-soft); border-radius: 3px; width: 28px; margin-bottom: 6px; }
+  .space-item .hex { font-size: 10.5px; }
+
+  /* radius + shadow */
+  .shape-row { display: flex; gap: 16px; align-items: flex-end; }
+  .shape { background: #fff; border: 1px solid rgba(35,32,28,0.12); }
+  .shape-wrap { text-align: left; }
+  .shape-wrap .hex { margin-top: 6px; }
+  .sh { width: 108px; height: 64px; background: #fff; border-radius: var(--radius-tile); border: 1px solid rgba(35,32,28,0.08); }
+  .sh-focus { box-shadow: var(--shadow-focus-ring); }
+  .sh-halo { box-shadow: var(--shadow-halo); }
+  .sh-glow { background: var(--color-night); box-shadow: var(--shadow-frost-glow); border: none; }
+
+  /* motion + layout */
+  .fact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .fact { border: 1px solid rgba(35,32,28,0.08); border-radius: var(--radius-tile); padding: 12px 14px; background: rgba(255,255,255,0.6); }
+  .fact .name { margin-bottom: 2px; }
+  .fact .tok { font-family: var(--font-mono); font-size: 10.5px; color: var(--color-ink-34); display: block; margin-top: 4px; }
+  .curve { display: inline-block; width: 44px; height: 28px; vertical-align: middle; margin-right: 8px; }
+
   /* components */
-  .row { display: flex; gap: 16px; align-items: center; }
+  .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .comp-cell { border: 1px dashed rgba(35,32,28,0.15); border-radius: var(--radius-panel); padding: 18px; }
+  .comp-cell > .hex { margin-bottom: 12px; }
+  .navbar { display: flex; align-items: center; gap: 24px; background: rgba(255,255,255,0.72); border: 1px solid rgba(35,32,28,0.08); border-radius: var(--radius-pill); padding: 10px 20px; }
+  .navbar .logo { font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+  .navbar a { font-size: var(--text-sm); font-weight: 500; color: var(--color-ink); text-decoration: none; }
+  .navbar .push { margin-left: auto; }
   .btn-dark {
-    font-family: var(--font-sans); font-size: var(--text-button); font-weight: 500;
+    font-family: var(--font-sans); font-size: var(--text-sm); font-weight: 500;
     background: var(--color-ink); color: var(--color-paper);
-    border: none; border-radius: var(--radius-pill); padding: 12px 22px;
+    border: none; border-radius: var(--radius-pill); padding: 11px 20px;
   }
+  .btn-dark.small { padding: 8px 16px; }
   .btn-ghost {
-    font-family: var(--font-sans); font-size: var(--text-button); font-weight: 500;
+    font-family: var(--font-sans); font-size: var(--text-sm); font-weight: 500;
     background: rgba(255,255,255,0.72); color: var(--color-ink);
-    border: 1px solid rgba(35,32,28,0.15); border-radius: var(--radius-pill); padding: 12px 22px;
+    border: 1px solid rgba(35,32,28,0.15); border-radius: var(--radius-pill); padding: 11px 20px;
   }
+  .btn-focus { box-shadow: var(--shadow-focus-ring); }
+  .btn-disabled { opacity: 0.4; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
   .card {
     background: rgba(255,255,255,0.72); border: 1px solid rgba(35,32,28,0.08);
-    border-radius: var(--radius-card); padding: 20px 24px; width: 340px;
+    border-radius: var(--radius-card); padding: 20px 22px;
   }
+  .card .t-h5 { margin-bottom: 6px; }
+  .card .t-caption { margin-top: 10px; }
+  .chips { display: flex; gap: 6px; margin-top: 12px; }
+  .chip-dot { width: 22px; height: 22px; border-radius: 50%; }
   .bubble {
     background: #fff; border: 1px solid rgba(35,32,28,0.08);
-    border-radius: var(--radius-panel) var(--radius-panel) var(--radius-panel) 5px; padding: 12px 16px;
-    font-size: 15px; line-height: 1.5; width: 300px;
+    border-radius: var(--radius-panel) var(--radius-panel) var(--radius-panel) 5px; padding: 12px 15px;
+    font-size: 15px; line-height: 1.5;
   }
   .night-panel {
-    background-color: var(--color-night); background-image: var(--gradient-night-veil);
-    border-radius: var(--radius-card); padding: 20px 24px; width: 300px;
+    background-color: var(--color-night);
+    background-image:
+      radial-gradient(1px 1px at 30px 18px, rgba(255,255,255,0.8), transparent 100%),
+      radial-gradient(1.5px 1.5px at 210px 30px, rgba(255,255,255,0.6), transparent 100%),
+      radial-gradient(1px 1px at 120px 52px, rgba(255,255,255,0.55), transparent 100%),
+      var(--gradient-night-veil);
+    border-radius: var(--radius-card); padding: 20px 22px;
     color: var(--color-frost); font-size: 15px; line-height: 1.6;
   }
-  .night-panel .t { font-family: var(--font-serif); font-size: 21px; font-weight: 600; margin-bottom: 4px; }
+  .night-panel .t { font-family: var(--font-serif); font-size: var(--text-h5); font-weight: 600; margin-bottom: 4px; }
+  .night-panel .hr { height: 1px; background: var(--gradient-hairline); margin: 12px 0; }
+  .night-panel .cap { font-size: var(--text-caption); color: rgba(237,241,250,0.6); }
 </style>
 </head>
 <body>
 <div class="sheet" id="sheet">
   <p class="eyebrow">Design system</p>
   <h1 class="title">Althio</h1>
-  <p class="subtitle">Tokens extracted from althio.ai · Charter + Open Runde · warm paper + pastel aurora · type scale v2 (1.25)</p>
+  <p class="subtitle">Tokens extracted from althio.ai · Charter + Open Runde · warm paper + pastel aurora · type scale v2 · Major Third (1.25), base 16</p>
 
   <section>
-    <p class="section-label">Typography</p>
-    <div class="spec"><div class="meta"><b>Display / H1</b><br>Charter 500 · 76px · lh 1.1 · ls −0.025em</div><div class="display">Holds <em>the space between.</em></div></div>
-    <div class="spec"><div class="meta"><b>H2</b><br>Charter 500 · 49px · lh 1.15 · ls −0.02em</div><div class="h2">One hour of therapy.</div></div>
-    <div class="spec"><div class="meta"><b>H4</b><br>Charter 500 · 31px · lh 1.25</div><div class="h4">Patients check in, any hour</div></div>
-    <div class="spec"><div class="meta"><b>Pull quote</b><br>Charter 400 italic · 25px</div><div class="pull">3 am counts too. Althio answers.</div></div>
-    <div class="spec"><div class="meta"><b>H5 / card title</b><br>Charter 600 · 20px</div><div class="h5">Clinician supervised</div></div>
-    <div class="spec"><div class="meta"><b>H6</b><br>Open Runde 600 · 14px</div><div class="h6">Between-session signals</div></div>
-    <div class="spec"><div class="meta"><b>Code</b><br>Mono 400 · 14px</div><div class="code">althio.session.brief(patient_id)</div></div>
-    <div class="spec"><div class="meta"><b>Lead</b><br>Open Runde 400 · 20px · lh 1.5</div><div class="lead">Althio is an AI context layer for clinical teams.</div></div>
-    <div class="spec"><div class="meta"><b>Body</b><br>Open Runde 400 · 16px · lh 1.6</div><div class="body">Progress is made in session and lost in the gap.</div></div>
-    <div class="spec"><div class="meta"><b>Caption / eyebrow</b><br>Open Runde · 13px · +0.14em caps</div><div><span class="eyebrow" style="margin:0">Continuity</span> &nbsp; <span class="cap">2 signals · 1 flag · 40-second read</span></div></div>
+    <p class="section-label">Typography — full ramp</p>
+    <div class="spec"><div class="meta"><b>Display / H1 hero</b><br>Charter 500 · 76px · lh 1.1 · ls −0.025em<br>fluid: clamp(40px → 76px)</div><div class="t-display">Holds <em>the space between.</em></div></div>
+    <div class="spec"><div class="meta"><b>H1 — subpages</b><br>Charter 500 · 61px · lh 1.1 · ls −0.025em</div><div class="t-h1sub">Built for clinicians</div></div>
+    <div class="spec"><div class="meta"><b>H2</b><br>Charter 500 · 49px · lh 1.15 · ls −0.02em</div><div class="t-h2">One hour of therapy.</div></div>
+    <div class="spec"><div class="meta"><b>H3</b><br>Charter 500 · 39px · lh 1.2 · ls −0.02em</div><div class="t-h3">Three of us. One loop of care.</div></div>
+    <div class="spec"><div class="meta"><b>H4</b><br>Charter 500 · 31px · lh 1.25 · ls −0.015em</div><div class="t-h4">Patients check in, any hour</div></div>
+    <div class="spec"><div class="meta"><b>Pull quote</b><br>Charter 400 italic · 25px · lh 1.35</div><div class="t-pull">3 am counts too. Althio answers.</div></div>
+    <div class="spec"><div class="meta"><b>H5 / card title</b><br>Charter 600 · 20px · lh 1.4 · ls −0.01em</div><div class="t-h5">Clinician supervised</div></div>
+    <div class="spec"><div class="meta"><b>H6</b><br>Open Runde 600 · 14px · lh 1.55</div><div class="t-h6">Between-session signals</div></div>
+    <div class="spec"><div class="meta"><b>Lead</b><br>Open Runde 400 · 20px · lh 1.5</div><div class="t-lead">Althio is an AI context layer for clinical teams.</div></div>
+    <div class="spec"><div class="meta"><b>Body</b><br>Open Runde 400 · 16px · lh 1.6</div><div class="t-body">Progress is made in session and lost in the gap. Althio holds what happens between.</div></div>
+    <div class="spec"><div class="meta"><b>Small / nav / button</b><br>Open Runde 500 · 14px · lh 1.55</div><div class="t-sm">Clinicians &nbsp;·&nbsp; Safety &nbsp;·&nbsp; Research &nbsp;·&nbsp; Journal</div></div>
+    <div class="spec"><div class="meta"><b>Caption + sub-caption</b><br>Open Runde 400 · 13px · ink-60 / ink-34</div><div><span class="t-caption">2 signals · 1 flag · 40-second read</span> &nbsp; <span class="t-subcaption">Tue 11:42 pm · Althio answered</span></div></div>
+    <div class="spec"><div class="meta"><b>Eyebrow / overline</b><br>Open Runde 500 · 13px · caps · +0.14em</div><div><span class="eyebrow" style="margin:0">Continuity</span></div></div>
+    <div class="spec"><div class="meta"><b>Code</b><br>Mono 400 · 14px · lh 1.6</div><div class="t-code">althio.session.brief(patient_id)</div></div>
+    <div class="spec"><div class="meta"><b>Inline link</b><br>ink · no underline at rest</div><div class="t-link">Read how we build for safety <span class="arrow">→</span></div></div>
   </section>
 
   <section>
     <p class="section-label">Color</p>
+    <p class="sub-label">Primitives</p>
     <div class="swatches">
-      <div class="swatch"><div class="chip" style="background:#fbf7f0"></div><p class="name">Paper</p><p class="hex">#FBF7F0 · page bg</p></div>
-      <div class="swatch"><div class="chip" style="background:#23201c"></div><p class="name">Ink</p><p class="hex">#23201C · text, dark UI</p></div>
-      <div class="swatch"><div class="chip" style="background:#0b0f1e"></div><p class="name">Night</p><p class="hex">#0B0F1E · dark section</p></div>
-      <div class="swatch"><div class="chip" style="background:#edf1fa"></div><p class="name">Frost</p><p class="hex">#EDF1FA · text on dark</p></div>
-      <div class="swatch"><div class="chip" style="background:#7a9ed0"></div><p class="name">Sky</p><p class="hex">#7A9ED0 · accent</p></div>
-      <div class="swatch"><div class="chip" style="background:#a8c6e8"></div><p class="name">Sky soft</p><p class="hex">#A8C6E8</p></div>
-      <div class="swatch"><div class="chip" style="background:#b9b4de"></div><p class="name">Lavender</p><p class="hex">#B9B4DE</p></div>
-      <div class="swatch"><div class="chip" style="background:#d9a08f"></div><p class="name">Clay</p><p class="hex">#D9A08F</p></div>
-      <div class="swatch"><div class="chip" style="background:#e8b7a6"></div><p class="name">Clay soft</p><p class="hex">#E8B7A6</p></div>
-      <div class="swatch"><div class="chip" style="background:#c9af7c"></div><p class="name">Gold</p><p class="hex">#C9AF7C</p></div>
+      <div><div class="chip" style="background:#fbf7f0"></div><p class="name">Paper</p><p class="hex">#FBF7F0 · page bg</p></div>
+      <div><div class="chip" style="background:#23201c"></div><p class="name">Ink</p><p class="hex">#23201C · text, dark UI</p></div>
+      <div><div class="chip" style="background:#0b0f1e"></div><p class="name">Night</p><p class="hex">#0B0F1E · dark section</p></div>
+      <div><div class="chip" style="background:#edf1fa"></div><p class="name">Frost</p><p class="hex">#EDF1FA · text on dark</p></div>
+      <div><div class="chip" style="background:#7a9ed0"></div><p class="name">Sky</p><p class="hex">#7A9ED0 · accent</p></div>
+      <div><div class="chip" style="background:#a8c6e8"></div><p class="name">Sky soft</p><p class="hex">#A8C6E8</p></div>
+      <div><div class="chip" style="background:#b9b4de"></div><p class="name">Lavender</p><p class="hex">#B9B4DE</p></div>
+      <div><div class="chip" style="background:#d9a08f"></div><p class="name">Clay</p><p class="hex">#D9A08F</p></div>
+      <div><div class="chip" style="background:#e8b7a6"></div><p class="name">Clay soft</p><p class="hex">#E8B7A6</p></div>
+      <div><div class="chip" style="background:#c9af7c"></div><p class="name">Gold</p><p class="hex">#C9AF7C</p></div>
+    </div>
+    <p class="sub-label">Semantic roles</p>
+    <div class="roles">
+      <div class="role"><p style="color:var(--text-primary)">Primary text</p><span class="tok">--text-primary · 14.9:1</span></div>
+      <div class="role"><p style="color:var(--text-secondary)">Secondary text</p><span class="tok">--text-secondary · large only</span></div>
+      <div class="role"><p style="color:var(--text-muted)">Muted / decorative</p><span class="tok">--text-muted · 2.1:1</span></div>
+      <div class="role dark"><p style="color:var(--text-on-dark)">Text on dark</p><span class="tok">--text-on-dark · 15.9:1</span></div>
+      <div class="role" style="background:var(--surface-card); border-color:var(--border-strong)"><p>Card surface</p><span class="tok">--surface-card + --border-*</span></div>
     </div>
   </section>
 
   <section>
     <p class="section-label">Gradients</p>
     <div class="grads">
-      <div class="gradwrap"><div class="grad g-aurora"></div><p class="name">Aurora wash</p><p class="hex">pastel radials on paper · hero band</p></div>
-      <div class="gradwrap"><div class="grad g-text"></div><p class="name">Accent text</p><p class="hex">blue, clipped to italic serif</p></div>
-      <div class="gradwrap"><div class="grad g-night"></div><p class="name">Night veil</p><p class="hex">veil + starfield + hairline on #0B0F1E</p></div>
+      <div><div class="grad g-aurora"></div><p class="name">Aurora wash</p><p class="hex">pastel radials on paper · hero band only</p></div>
+      <div><div class="grad g-text"></div><p class="name">Accent text</p><p class="hex">blue, clipped to italic serif · one phrase per hero</p></div>
+      <div><div class="grad g-night"></div><p class="name">Night veil</p><p class="hex">veil + starfield + hairline on #0B0F1E</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Spacing — 4px base scale</p>
+    <div class="space-row">
+      <div class="space-item"><div class="space-bar" style="height:4px"></div><p class="name">4</p><p class="hex">--space-1</p></div>
+      <div class="space-item"><div class="space-bar" style="height:8px"></div><p class="name">8</p><p class="hex">--space-2</p></div>
+      <div class="space-item"><div class="space-bar" style="height:12px"></div><p class="name">12</p><p class="hex">--space-3</p></div>
+      <div class="space-item"><div class="space-bar" style="height:16px"></div><p class="name">16</p><p class="hex">--space-4</p></div>
+      <div class="space-item"><div class="space-bar" style="height:24px"></div><p class="name">24</p><p class="hex">--space-6</p></div>
+      <div class="space-item"><div class="space-bar" style="height:28px"></div><p class="name">28</p><p class="hex">--space-7</p></div>
+      <div class="space-item"><div class="space-bar" style="height:32px"></div><p class="name">32</p><p class="hex">--space-8</p></div>
+      <div class="space-item"><div class="space-bar" style="height:48px"></div><p class="name">48</p><p class="hex">--space-12</p></div>
+      <div class="space-item"><div class="space-bar" style="height:56px"></div><p class="name">56</p><p class="hex">--space-14</p></div>
+      <div class="space-item"><div class="space-bar" style="height:64px"></div><p class="name">64</p><p class="hex">--space-16</p></div>
+      <div class="space-item"><div class="space-bar" style="height:96px"></div><p class="name">96</p><p class="hex">--space-24</p></div>
+      <div class="space-item"><div class="space-bar" style="height:128px"></div><p class="name">128</p><p class="hex">--space-32</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Shape &amp; elevation</p>
+    <div class="shape-row">
+      <div class="shape-wrap"><div class="shape" style="width:108px;height:64px;border-radius:var(--radius-tile)"></div><p class="name">Tile 14</p><p class="hex">--radius-tile</p></div>
+      <div class="shape-wrap"><div class="shape" style="width:108px;height:64px;border-radius:var(--radius-panel)"></div><p class="name">Panel 18</p><p class="hex">--radius-panel</p></div>
+      <div class="shape-wrap"><div class="shape" style="width:108px;height:64px;border-radius:var(--radius-card)"></div><p class="name">Card 28</p><p class="hex">--radius-card</p></div>
+      <div class="shape-wrap"><div class="shape" style="width:108px;height:44px;border-radius:var(--radius-pill)"></div><p class="name">Pill 999</p><p class="hex">--radius-pill</p></div>
+      <div class="shape-wrap" style="margin-left:24px"><div class="sh sh-focus"></div><p class="name">Focus ring</p><p class="hex">--shadow-focus-ring</p></div>
+      <div class="shape-wrap"><div class="sh sh-halo"></div><p class="name">Halo</p><p class="hex">--shadow-halo</p></div>
+      <div class="shape-wrap"><div class="sh sh-glow"></div><p class="name">Frost glow</p><p class="hex">--shadow-frost-glow</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Motion &amp; layout</p>
+    <div class="fact-grid">
+      <div class="fact"><p class="name"><svg class="curve" viewBox="0 0 44 28"><path d="M2 26 C 11.7 0.8, 15.2 3.5, 42 2" fill="none" stroke="#7a9ed0" stroke-width="2"/></svg>Gentle ease</p><span class="tok">cubic-bezier(0.22, 0.9, 0.3, 1)</span></div>
+      <div class="fact"><p class="name">200 · 250 · 350 ms</p><p class="hex">color / borders / transform</p><span class="tok">--duration-fast/base/slow</span></div>
+      <div class="fact"><p class="name">Container 1120 · Prose 760</p><p class="hex">centered column · 66ch measure</p><span class="tok">--container-max · --prose-max</span></div>
+      <div class="fact"><p class="name">Sections 130px</p><p class="hex">breakpoints 1200 / 810</p><span class="tok">--section-pad-y</span></div>
     </div>
   </section>
 
   <section style="margin-bottom:0">
     <p class="section-label">Components</p>
-    <div class="row">
-      <button class="btn-dark">Request a demo</button>
-      <button class="btn-ghost">How it works</button>
-      <div class="bubble">“Couldn’t sleep again. The thing with my brother came back.”<br><span class="cap" style="font-size:12px">Tue 11:42 pm · Althio answered</span></div>
-      <div class="night-panel"><p class="t">Althio, all week</p>Radius 28 · frost text · veil gradient</div>
+    <div class="comp-grid">
+      <div class="comp-cell" style="grid-column:1/3">
+        <p class="hex">Navigation — wordmark left, links center, primary action right</p>
+        <div class="navbar"><span class="logo">althio</span><a>Clinicians</a><a>Safety</a><a>Research</a><a>Journal</a><span class="push"></span><button class="btn-dark small">Request a demo</button></div>
+      </div>
+      <div class="comp-cell">
+        <p class="hex">Buttons — default · focus · disabled</p>
+        <div class="row">
+          <button class="btn-dark">Request a demo</button>
+          <button class="btn-ghost">How it works</button>
+          <button class="btn-dark btn-focus">Focused</button>
+          <button class="btn-ghost btn-disabled">Disabled</button>
+        </div>
+      </div>
+      <div class="comp-cell">
+        <p class="hex">Chat bubble — 18px radius, 5px tail</p>
+        <div class="bubble">“Couldn’t sleep again. The thing with my brother came back.”<br><span class="t-subcaption">Tue 11:42 pm · Althio answered</span></div>
+      </div>
+      <div class="comp-cell">
+        <p class="hex">Card — white 72%, hairline border, radius 28</p>
+        <div class="card">
+          <p class="eyebrow" style="margin-bottom:6px">Continuity</p>
+          <p class="t-h5">Clinician supervised</p>
+          <p class="t-body" style="font-size:15px">Althio never diagnoses or changes a treatment plan.</p>
+          <div class="chips"><span class="chip-dot" style="background:#7a9ed0"></span><span class="chip-dot" style="background:#b9b4de"></span><span class="chip-dot" style="background:#d9a08f"></span><span class="chip-dot" style="background:#c9af7c"></span></div>
+          <p class="t-caption">2 signals · 1 flag · 40-second read</p>
+        </div>
+      </div>
+      <div class="comp-cell">
+        <p class="hex">Night panel — veil, starfield, hairline, frost</p>
+        <div class="night-panel">
+          <p class="t">Althio, all week</p>
+          Between sessions, patients talk to Althio the moment something happens.
+          <div class="hr"></div>
+          <p class="cap">3 am counts too · frost text · radius 28</p>
+        </div>
+      </div>
     </div>
   </section>
 </div>
