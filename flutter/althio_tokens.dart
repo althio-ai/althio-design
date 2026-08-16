@@ -74,59 +74,52 @@ abstract final class AlthioText {
   static const _serifFallback = ['Iowan Old Style', 'Georgia', 'serif'];
   static const _sans = 'Open Runde';
 
-  // Desktop-1440 sizes. Scale down per breakpoint (display 78 → 56 tablet → 40 phone).
+  // Type scale v2: Major Third (1.25) modular scale, base 16.
+  // Steps 13/14/16/20/25/31/39/49/61/76. Desktop-1440 sizes;
+  // scale display down per breakpoint (76 -> 56 tablet -> 40 phone).
   static const display = TextStyle(
       fontFamily: _serif, fontFamilyFallback: _serifFallback,
-      fontWeight: FontWeight.w500, fontSize: 78, height: 1.06,
-      letterSpacing: -1.95, color: AlthioColors.textPrimary);
+      fontWeight: FontWeight.w500, fontSize: 76, height: 1.1,
+      letterSpacing: -1.9, color: AlthioColors.textPrimary);
+  static const h1Sub = TextStyle(
+      fontFamily: _serif, fontFamilyFallback: _serifFallback,
+      fontWeight: FontWeight.w500, fontSize: 61, height: 1.1,
+      letterSpacing: -1.53, color: AlthioColors.textPrimary);
   static const h2 = TextStyle(
       fontFamily: _serif, fontFamilyFallback: _serifFallback,
-      fontWeight: FontWeight.w500, fontSize: 52, height: 1.12,
-      letterSpacing: -1.04, color: AlthioColors.textPrimary);
-  static const h2Alt = TextStyle(
-      fontFamily: _serif, fontFamilyFallback: _serifFallback,
-      fontWeight: FontWeight.w500, fontSize: 44, height: 1.15,
-      letterSpacing: -0.88, color: AlthioColors.textPrimary);
+      fontWeight: FontWeight.w500, fontSize: 49, height: 1.15,
+      letterSpacing: -0.98, color: AlthioColors.textPrimary);
   static const h3 = TextStyle(
       fontFamily: _serif, fontFamilyFallback: _serifFallback,
-      fontWeight: FontWeight.w500, fontSize: 40, height: 1.15,
-      letterSpacing: -0.8, color: AlthioColors.textPrimary);
+      fontWeight: FontWeight.w500, fontSize: 39, height: 1.2,
+      letterSpacing: -0.78, color: AlthioColors.textPrimary);
   static const h4 = TextStyle(
       fontFamily: _serif, fontFamilyFallback: _serifFallback,
-      fontWeight: FontWeight.w500, fontSize: 30, height: 1.2,
-      letterSpacing: -0.45, color: AlthioColors.textPrimary);
+      fontWeight: FontWeight.w500, fontSize: 31, height: 1.25,
+      letterSpacing: -0.47, color: AlthioColors.textPrimary);
   static const pull = TextStyle(
       fontFamily: _serif, fontFamilyFallback: _serifFallback,
       fontWeight: FontWeight.w400, fontStyle: FontStyle.italic,
-      fontSize: 24, height: 1.4, color: AlthioColors.ink72);
+      fontSize: 25, height: 1.35, color: AlthioColors.ink72);
   static const h5 = TextStyle(
       fontFamily: _serif, fontFamilyFallback: _serifFallback,
-      fontWeight: FontWeight.w600, fontSize: 21, height: 1.6,
-      letterSpacing: -0.21, color: AlthioColors.textPrimary);
+      fontWeight: FontWeight.w600, fontSize: 20, height: 1.4,
+      letterSpacing: -0.2, color: AlthioColors.textPrimary);
   static const lead = TextStyle(
-      fontFamily: _sans, fontWeight: FontWeight.w400, fontSize: 19,
-      height: 1.6, color: AlthioColors.textSecondary);
+      fontFamily: _sans, fontWeight: FontWeight.w400, fontSize: 20,
+      height: 1.5, color: AlthioColors.textSecondary);
   static const body = TextStyle(
-      fontFamily: _sans, fontWeight: FontWeight.w400, fontSize: 17,
-      height: 1.6, color: AlthioColors.textPrimary);
-  static const bodySm = TextStyle(
       fontFamily: _sans, fontWeight: FontWeight.w400, fontSize: 16,
       height: 1.6, color: AlthioColors.textPrimary);
-  static const ui = TextStyle(
-      fontFamily: _sans, fontWeight: FontWeight.w500, fontSize: 15,
-      height: 1.5, color: AlthioColors.textPrimary);
-  static const button = TextStyle(
+  static const sm = TextStyle(
       fontFamily: _sans, fontWeight: FontWeight.w500, fontSize: 14,
-      height: 1.6);
+      height: 1.55, color: AlthioColors.textPrimary);
   static const caption = TextStyle(
-      fontFamily: _sans, fontWeight: FontWeight.w400, fontSize: 12.5,
-      height: 1.6, color: AlthioColors.textSecondary);
+      fontFamily: _sans, fontWeight: FontWeight.w400, fontSize: 13,
+      height: 1.5, color: AlthioColors.textSecondary);
   static const eyebrow = TextStyle(
-      fontFamily: _sans, fontWeight: FontWeight.w500, fontSize: 12.5,
-      height: 1.6, letterSpacing: 1.75, color: AlthioColors.textSecondary);
-  static const micro = TextStyle(
-      fontFamily: _sans, fontWeight: FontWeight.w400, fontSize: 12,
-      height: 1.6, color: AlthioColors.textSecondary);
+      fontFamily: _sans, fontWeight: FontWeight.w500, fontSize: 13,
+      height: 1.5, letterSpacing: 1.82, color: AlthioColors.textSecondary);
 }
 
 /// Light theme wired to the tokens.
@@ -143,21 +136,22 @@ ThemeData althioTheme() => ThemeData(
       ),
       textTheme: const TextTheme(
         displayLarge: AlthioText.display,
+        displayMedium: AlthioText.h1Sub,
         headlineLarge: AlthioText.h2,
         headlineMedium: AlthioText.h3,
         headlineSmall: AlthioText.h4,
         titleMedium: AlthioText.h5,
         bodyLarge: AlthioText.body,
-        bodyMedium: AlthioText.bodySm,
-        labelLarge: AlthioText.button,
+        bodyMedium: AlthioText.body,
+        labelLarge: AlthioText.sm,
         bodySmall: AlthioText.caption,
-        labelSmall: AlthioText.micro,
+        labelSmall: AlthioText.caption,
       ),
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
           backgroundColor: AlthioColors.ink,
           foregroundColor: AlthioColors.paper,
-          textStyle: AlthioText.button,
+          textStyle: AlthioText.sm,
           padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 12),
           shape: const StadiumBorder(),
         ),
