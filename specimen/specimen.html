@@ -11,7 +11,17 @@
     color: var(--color-ink);
     background: var(--color-paper);
   }
-  .sheet { padding: 56px 64px 64px; background-image: var(--gradient-aurora); }
+  /* Aurora is a hero treatment on the live site: confine it to a top band
+     that fades out, instead of stretching the radials over the whole sheet. */
+  .sheet { padding: 56px 64px 64px; position: relative; }
+  .sheet::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 620px;
+    background-image: var(--gradient-aurora);
+    -webkit-mask-image: linear-gradient(#000 55%, transparent);
+    mask-image: linear-gradient(#000 55%, transparent);
+    pointer-events: none;
+  }
+  .sheet > * { position: relative; }
   .eyebrow {
     font-size: var(--text-eyebrow); font-weight: 500;
     letter-spacing: 0.14em; text-transform: uppercase;
