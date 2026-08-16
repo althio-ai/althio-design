@@ -15,9 +15,11 @@ Everything else is **Extracted**.
 4. [Patterns](#4-patterns)
 5. [Content and voice](#5-content-and-voice)
 6. [Token reference](#6-token-reference)
+7. [Platform usage](#7-platform-usage) — web/React, Flutter, Figma
 
-Files: `tokens.css` (all tokens as CSS custom properties), `specimen/specimen.html`
-(source of the image above), `assets/` (renders and site screenshots).
+Files: `tokens.css` (web), `tokens.json` (W3C format for Figma and codegen),
+`flutter/althio_tokens.dart` (Flutter), `specimen/specimen.html` (source of the
+image above), `assets/` (renders and site screenshots).
 
 ---
 
@@ -324,6 +326,52 @@ Naming convention: primitives are `--color-*`, `--text-*` (scale), `--space-*`,
 `--radius-*`, `--shadow-*`, `--gradient-*`, `--duration-*`, `--ease-*`. Semantic
 aliases (`--text-primary`, `--surface-card`, `--border-hairline`) map primitives to
 roles; application code uses the aliases so a palette change stays one-file.
+
+---
+
+## 7. Platform usage
+
+`tokens.json` (W3C Design Tokens format) is the source of record for non-CSS
+platforms. `tokens.css` and `flutter/althio_tokens.dart` are derived from it —
+when you change a value, change all three.
+
+### Web / React
+
+Import `tokens.css` and use the custom properties (see section 6). In React,
+reference them in any styling approach: plain CSS, CSS modules, styled-components
+(`color: var(--text-primary)`), or map them into a Tailwind theme via
+`@theme` / `tailwind.config` values.
+
+### Flutter
+
+Copy `flutter/althio_tokens.dart` into your project (or reference this repo).
+
+```dart
+MaterialApp(theme: althioTheme())
+// or directly:
+Text('Patients check in', style: AlthioText.h4)
+Container(color: AlthioColors.surfaceCard)
+```
+
+Fonts: bundle Open Runde OTFs (400/500/600/700) from
+[lauridskern/open-runde](https://github.com/lauridskern/open-runde) in
+`pubspec.yaml`. Charter exists on iOS/macOS; on Android bundle Bitstream Charter
+or accept the serif fallback.
+
+### Figma
+
+Install the **Tokens Studio for Figma** plugin, then import `tokens.json`
+(Tools → Load from file/URL, or sync it straight from this GitHub repo). Colors,
+typography, spacing, and radii arrive as Figma variables/styles.
+
+### Other platforms
+
+Feed `tokens.json` to [Style Dictionary](https://styledictionary.com) to generate
+Swift, Kotlin, Compose, or any other format:
+
+```bash
+npx style-dictionary@latest build --platform ios  # with a config listing tokens.json as source
+```
 
 Reference screenshot of the live site:
 
