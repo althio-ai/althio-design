@@ -146,6 +146,31 @@ Rules:
 v1 token names still resolve in `tokens.css` as deprecated aliases
 (`--text-ui` → `--text-sm`, etc.). Migrate, then delete the alias block.
 
+#### Complete role map (HTML h1-h6 and every text role)
+
+| Semantic role | Token | Style |
+|---|---|---|
+| `h1` (homepage hero) | `--text-display` | Charter 500 · 76px |
+| `h1` (subpages) | `--text-h1-sub` | Charter 500 · 61px |
+| `h2` | `--text-h2` | Charter 500 · 49px |
+| `h3` | `--text-h3` | Charter 500 · 39px |
+| `h4` | `--text-h4` | Charter 500 · 31px |
+| `h5` | `--text-h5` | Charter 600 · 20px |
+| `h6` | `--text-h6` | Open Runde 600 · 14px (Inferred) |
+| Lead paragraph | `--text-lead` | Open Runde 400 · 20px |
+| Body, lists | `--text-body` | Open Runde 400 · 16px |
+| Blockquote / pull quote | `--text-pull` | Charter 400 italic · 25px |
+| Nav, buttons, small copy | `--text-sm` | Open Runde 500/400 · 14px |
+| Caption | `--text-caption` | Open Runde 400 · 13px, ink-60% |
+| Sub-caption / timestamp | `--text-caption` | Same size, ink-34% (`--text-muted`) |
+| Eyebrow / overline | `--text-caption` | Open Runde 500 · 13px · caps · +0.14em |
+| Inline code / `pre` | `--text-code` | Mono 400 · 14px (Inferred) |
+| Link | inherits size | Ink, no underline at rest, color shift on hover; on-scale everywhere |
+
+Captions and sub-captions share one size and differ by color: caption uses
+`--text-secondary`, sub-caption uses `--text-muted`. H6 and code are Inferred —
+the site never renders them; the tokens exist so applications have a defined answer.
+
 ### 2.4 Spacing (Extracted values, scale formalized)
 
 A 4px base scale. Site measurements cluster on these steps (normalized to the 1440 design size):
