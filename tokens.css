@@ -86,4 +86,41 @@
   --shadow-frost-glow: rgba(237, 241, 250, 0.45) 0 0 8px 0;
   --shadow-focus-ring: rgba(122, 158, 208, 0.38) 0 0 0 1.25px;
   --shadow-halo: rgba(255, 255, 255, 0.14) 0 0 0 5px, rgba(255, 255, 255, 0.65) 0 0 18px 0;
+
+  /* Spacing — 4px base scale (site values cluster on it; normalized to the 1440 design size) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Layout (desktop 1440 reference) */
+  --container-max: 1120px;  /* main content column */
+  --prose-max: 760px;       /* long-form text measure */
+  --section-pad-y: 130px;   /* between major sections; range 96-170px on the site */
+  --page-pad-x: 40px;
+
+  /* Motion */
+  --ease-gentle: cubic-bezier(0.22, 0.9, 0.3, 1);  /* the site's signature curve */
+  --duration-fast: 200ms;   /* color, opacity */
+  --duration-base: 250ms;   /* borders, small moves */
+  --duration-slow: 350ms;   /* transform, reveals */
+
+  /* Semantic aliases — use these in application code, not the primitives above */
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-60);   /* large or secondary text only (4.2:1 on paper) */
+  --text-muted: var(--color-ink-34);       /* decorative labels, never body copy */
+  --text-on-dark: var(--color-frost);
+  --surface-page: var(--color-paper);
+  --surface-card: rgba(255, 255, 255, 0.72);
+  --surface-dark: var(--color-night);
+  --border-hairline: rgba(35, 32, 28, 0.08);
+  --border-strong: rgba(35, 32, 28, 0.15);
 }
