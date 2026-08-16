@@ -49,8 +49,7 @@
   .body { font-size: var(--text-body); line-height: 1.6; }
   .cap { font-size: var(--text-caption); color: var(--color-ink-60); }
   /* swatches */
-  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
-  .swatch { width: 128px; }
+  .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px 12px; }
   .chip { height: 72px; border-radius: var(--radius-tile); border: 1px solid rgba(35,32,28,0.08); margin-bottom: 8px; }
   .swatch .name { font-size: 12.5px; font-weight: 600; }
   .swatch .hex { font-size: 11.5px; color: var(--color-ink-60); }
