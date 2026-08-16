@@ -59,22 +59,28 @@
   --gradient-night-veil: linear-gradient(rgba(8, 10, 22, 0.55) 0%, rgba(8, 10, 22, 0.18) 42%, rgba(8, 10, 22, 0.58) 100%);
   --gradient-hairline: linear-gradient(90deg, transparent, rgba(237, 241, 250, 0.35) 12%, rgba(237, 241, 250, 0.35) 88%, transparent);
 
-  /* Type scale (desktop 1440) */
-  --text-display: 78px;   /* h1, serif 500, lh 1.06, ls -0.025em */
-  --text-h2: 52px;        /* serif 500, lh 1.12, ls -0.02em */
-  --text-h2-alt: 44px;    /* serif 500, lh 1.15, ls -0.02em */
-  --text-h3: 40px;        /* serif 500, lh 1.15, ls -0.02em */
-  --text-h4: 30px;        /* serif 500, lh 1.2,  ls -0.015em */
-  --text-pull: 24px;      /* serif 400 italic, lh 1.4 */
-  --text-h5: 21px;        /* serif 600, lh 1.6, ls -0.01em */
-  --text-lead: 19px;      /* sans 400, lh 1.6 */
-  --text-body: 17px;      /* sans 400, lh 1.6 */
-  --text-body-sm: 16px;   /* sans 400, lh 1.6 */
-  --text-ui: 15px;        /* sans 500 (nav), 400 (captions) */
-  --text-button: 14px;    /* sans 500 */
-  --text-caption: 12.5px; /* sans 400, lh 1.6 */
-  --text-eyebrow: 12.5px; /* sans 500, uppercase, ls 0.14em */
-  --text-micro: 12px;     /* sans 400, timestamps */
+  /* Type scale v2 — Major Third (1.25) modular scale, base 16px, rem units.
+     Steps: 13 / 14 / 16 / 20 / 25 / 31 / 39 / 49 / 61 / 76.
+     Desktop values; each display size carries a clamp() for fluid scaling. */
+  --text-display: clamp(2.5rem, 1.6rem + 2.5vw, 4.75rem);  /* 40->76px; serif 500, lh 1.1, ls -0.025em */
+  --text-h1-sub: clamp(2.25rem, 1.5rem + 2vw, 3.8125rem);  /* 36->61px; subpage hero */
+  --text-h2: clamp(1.9375rem, 1.4rem + 1.3vw, 3.0625rem);  /* 31->49px; serif 500, lh 1.15, ls -0.02em */
+  --text-h3: clamp(1.5625rem, 1.2rem + 0.9vw, 2.4375rem);  /* 25->39px; serif 500, lh 1.2, ls -0.02em */
+  --text-h4: 1.9375rem;   /* 31px; serif 500, lh 1.25, ls -0.015em */
+  --text-pull: 1.5625rem; /* 25px; serif 400 italic, lh 1.35 */
+  --text-h5: 1.25rem;     /* 20px; serif 600, lh 1.4, ls -0.01em */
+  --text-lead: 1.25rem;   /* 20px; sans 400, lh 1.5 */
+  --text-body: 1rem;      /* 16px; sans 400, lh 1.6 */
+  --text-sm: 0.875rem;    /* 14px; sans: nav/buttons 500, small copy 400; lh 1.55 */
+  --text-caption: 0.8125rem; /* 13px; sans 400, lh 1.5; eyebrow: 500, caps, ls 0.14em */
+
+  /* Deprecated v1 aliases — migrate, then remove */
+  --text-h2-alt: var(--text-h3);
+  --text-body-sm: var(--text-body);
+  --text-ui: var(--text-sm);
+  --text-button: var(--text-sm);
+  --text-eyebrow: var(--text-caption);
+  --text-micro: var(--text-caption);
 
   /* Radii */
   --radius-pill: 999px;   /* buttons, chips */

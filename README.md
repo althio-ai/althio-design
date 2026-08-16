@@ -99,32 +99,52 @@ Rules:
 - Use Charter italic for pull quotes and for one gradient accent phrase in a headline.
 - Do not use Charter for buttons or navigation. Do not use Open Runde for headings.
 
-#### Type scale — desktop 1440 (Extracted)
+#### Type scale v2 (Redesigned per guidelines)
+
+A **Major Third (1.25) modular scale**, base 16px, in rem. High heading contrast
+suits a marketing site; the site's extracted v1 scale had 15 ad-hoc sizes with
+near-duplicates (44/40, 17/16/15.5/15, 12.5/12) — v2 consolidates to 10 steps:
+**13 / 14 / 16 / 20 / 25 / 31 / 39 / 49 / 61 / 76**.
 
 | Token | Family / weight | Size | Line height | Letter spacing | Use |
 |---|---|---|---|---|---|
-| `--text-display` | Charter 500 | 78px | 1.06 | −0.025em | Hero headline |
-| `--text-h2` | Charter 500 | 52px | 1.12 | −0.02em | Section headline |
-| `--text-h2-alt` | Charter 500 | 44px | 1.15 | −0.02em | Secondary section headline |
-| `--text-h3` | Charter 500 | 40px | 1.15 | −0.02em | Sub-section headline |
-| `--text-h4` | Charter 500 | 30px | 1.2 | −0.015em | Card headline |
-| `--text-pull` | Charter 400 italic | 24px | 1.4 | 0 | Editorial aside |
-| `--text-h5` | Charter 600 | 21px | 1.6 | −0.01em | Small card title |
-| `--text-lead` | Open Runde 400 | 19px | 1.6 | 0 | Hero subcopy |
-| `--text-body` | Open Runde 400 | 17px | 1.6 | 0 | Paragraphs, lists |
-| `--text-body-sm` | Open Runde 400 | 16px | 1.6 | 0 | Dense copy |
-| `--text-ui` | Open Runde 500 | 15px | 1.5 | 0 | Navigation links |
-| `--text-button` | Open Runde 500 | 14px | 1.6 | 0 | All buttons |
-| `--text-caption` | Open Runde 400 | 12.5px | 1.6 | 0 | Metadata lines |
-| `--text-eyebrow` | Open Runde 500 | 12.5px | 1.6 | +0.14em, caps | Section labels |
-| `--text-micro` | Open Runde 400 | 12px | 1.6 | 0 | Timestamps |
+| `--text-display` | Charter 500 | 76px | 1.1 | −0.025em | Hero headline |
+| `--text-h1-sub` | Charter 500 | 61px | 1.1 | −0.025em | Subpage hero |
+| `--text-h2` | Charter 500 | 49px | 1.15 | −0.02em | Section headline |
+| `--text-h3` | Charter 500 | 39px | 1.2 | −0.02em | Sub-section headline |
+| `--text-h4` | Charter 500 | 31px | 1.25 | −0.015em | Card headline |
+| `--text-pull` | Charter 400 italic | 25px | 1.35 | 0 | Editorial aside |
+| `--text-h5` | Charter 600 | 20px | 1.4 | −0.01em | Small card title |
+| `--text-lead` | Open Runde 400 | 20px | 1.5 | 0 | Hero subcopy |
+| `--text-body` | Open Runde 400 | 16px | 1.6 | 0 | Paragraphs, lists |
+| `--text-sm` | Open Runde 500/400 | 14px | 1.55 | 0 | Nav, buttons, small copy |
+| `--text-caption` | Open Runde 400 | 13px | 1.5 | 0 | Metadata, timestamps |
+| eyebrow (caption var.) | Open Runde 500 | 13px | 1.5 | +0.14em, caps | Section labels |
 
-Headline tracking is negative and scales with size: −2.5% of the font size at 78px,
-−2% at 40–52px. Body text never goes below 15px; captions never below 12px.
+Rules:
 
-**Inferred — smaller viewports:** the site scales all sizes by the viewport
-(Framer scaling). For fixed layouts, step the display down to ~56px on tablet
-(810–1199px) and ~40px on phone (<810px); keep body at 16–17px everywhere.
+- Headline tracking: −2.5% of font size at 61–76px, −2% at 39–49px, −1.5% at 31px, −1% for small serif.
+- Line height per guidelines: 1.1–1.25 headings, 1.5–1.6 text. Body measure stays 45–75 characters (`--prose-max`).
+- Display sizes are fluid in `tokens.css` via `clamp()` (display: 40px phone → 76px desktop). Fixed sizes below 31px do not scale.
+- Body text never below 16px; captions never below 13px.
+
+#### Migration from the extracted v1 scale (for updating the website)
+
+| v1 (extracted) | v2 | Change |
+|---|---|---|
+| Display 78 / lh 1.06 | 76 / lh 1.1 | On-scale, slightly looser leading |
+| H2 52 | 49 | On-scale |
+| H2-alt 44, H3 40 | H3 39 | Merged — one sub-section size |
+| H4 30 | 31 | On-scale |
+| Pull 24 | 25 | On-scale |
+| H5 21 | 20 | On-scale |
+| Lead 19 | 20 | On-scale |
+| Body 17, 16, 15.5, 15 | 16 | Merged — one body size |
+| UI 15, link 14.5, button 14, 13.5 | 14 | Merged — one UI size |
+| Caption 12.5, eyebrow 12.5, micro 12 | 13 | Merged — one caption size |
+
+v1 token names still resolve in `tokens.css` as deprecated aliases
+(`--text-ui` → `--text-sm`, etc.). Migrate, then delete the alias block.
 
 ### 2.4 Spacing (Extracted values, scale formalized)
 
