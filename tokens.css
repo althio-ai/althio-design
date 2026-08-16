@@ -29,6 +29,7 @@
   /* Type families */
   --font-serif: Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
   --font-sans: "Open Runde", -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;  /* Inferred: site has no code text */
 
   /* Core neutrals */
   --color-paper: #fbf7f0;        /* page background */
@@ -72,7 +73,9 @@
   --text-lead: 1.25rem;   /* 20px; sans 400, lh 1.5 */
   --text-body: 1rem;      /* 16px; sans 400, lh 1.6 */
   --text-sm: 0.875rem;    /* 14px; sans: nav/buttons 500, small copy 400; lh 1.55 */
+  --text-h6: 0.875rem;    /* 14px; sans 600, lh 1.55; smallest heading (Inferred) */
   --text-caption: 0.8125rem; /* 13px; sans 400, lh 1.5; eyebrow: 500, caps, ls 0.14em */
+  --text-code: 0.875rem;  /* 14px; mono 400, lh 1.6 (Inferred) */
 
   /* Deprecated v1 aliases — migrate, then remove */
   --text-h2-alt: var(--text-h3);

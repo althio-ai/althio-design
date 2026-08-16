@@ -114,6 +114,13 @@ abstract final class AlthioText {
   static const sm = TextStyle(
       fontFamily: _sans, fontWeight: FontWeight.w500, fontSize: 14,
       height: 1.55, color: AlthioColors.textPrimary);
+  static const h6 = TextStyle(
+      fontFamily: _sans, fontWeight: FontWeight.w600, fontSize: 14,
+      height: 1.55, color: AlthioColors.textPrimary);
+  static const code = TextStyle(
+      fontFamily: 'SF Mono', fontFamilyFallback: ['Menlo', 'monospace'],
+      fontWeight: FontWeight.w400, fontSize: 14,
+      height: 1.6, color: AlthioColors.textPrimary);
   static const caption = TextStyle(
       fontFamily: _sans, fontWeight: FontWeight.w400, fontSize: 13,
       height: 1.5, color: AlthioColors.textSecondary);
