@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1240px;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-paper);
+  }
+  .sheet { padding: 56px 64px 64px; background-image: var(--gradient-aurora); }
+  .eyebrow {
+    font-size: var(--text-eyebrow); font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--color-ink-60); margin-bottom: 10px;
+  }
+  .title { font-family: var(--font-serif); font-size: 44px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .subtitle { font-size: 15px; color: var(--color-ink-60); margin-bottom: 44px; }
+  section { margin-bottom: 44px; }
+  .section-label {
+    font-size: var(--text-eyebrow); font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--color-ink-34);
+    border-bottom: 1px solid rgba(35,32,28,0.12); padding-bottom: 8px; margin-bottom: 20px;
+  }
+  /* type specimens */
+  .spec { display: flex; align-items: baseline; gap: 24px; margin-bottom: 18px; }
+  .spec .meta { width: 240px; flex: none; font-size: 12px; color: var(--color-ink-60); line-height: 1.5; }
+  .spec .meta b { color: var(--color-ink); font-weight: 600; }
+  .display { font-family: var(--font-serif); font-size: 60px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.06; }
+  .display em { font-style: italic; background: var(--gradient-accent-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .h2 { font-family: var(--font-serif); font-size: 44px; font-weight: 500; letter-spacing: -0.02em; }
+  .h4 { font-family: var(--font-serif); font-size: 30px; font-weight: 500; letter-spacing: -0.015em; }
+  .pull { font-family: var(--font-serif); font-size: 24px; font-style: italic; color: var(--color-ink-72); }
+  .h5 { font-family: var(--font-serif); font-size: 21px; font-weight: 600; }
+  .lead { font-size: 19px; line-height: 1.6; color: var(--color-ink-60); }
+  .body { font-size: 17px; line-height: 1.6; }
+  .cap { font-size: 12.5px; color: var(--color-ink-60); }
+  /* swatches */
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 128px; }
+  .chip { height: 72px; border-radius: 14px; border: 1px solid rgba(35,32,28,0.08); margin-bottom: 8px; }
+  .swatch .name { font-size: 12.5px; font-weight: 600; }
+  .swatch .hex { font-size: 11.5px; color: var(--color-ink-60); }
+  /* gradients */
+  .grads { display: flex; gap: 12px; }
+  .grad { flex: 1; height: 96px; border-radius: 18px; border: 1px solid rgba(35,32,28,0.08); position: relative; overflow: hidden; }
+  .grad span { position: absolute; left: 12px; bottom: 10px; font-size: 11.5px; font-weight: 500; }
+  .g-aurora { background-color: var(--color-paper); background-image: var(--gradient-aurora); }
+  .g-text { background: var(--gradient-accent-text); }
+  .g-text span { color: #fff; }
+  .g-night { background-color: var(--color-night); background-image: var(--gradient-night-veil); }
+  .g-night span { color: var(--color-frost); }
+  /* components */
+  .row { display: flex; gap: 16px; align-items: center; }
+  .btn-dark {
+    font-family: var(--font-sans); font-size: 14px; font-weight: 500;
+    background: var(--color-ink); color: var(--color-paper);
+    border: none; border-radius: 999px; padding: 12px 22px;
+  }
+  .btn-ghost {
+    font-family: var(--font-sans); font-size: 14px; font-weight: 500;
+    background: rgba(255,255,255,0.72); color: var(--color-ink);
+    border: 1px solid rgba(35,32,28,0.15); border-radius: 999px; padding: 12px 22px;
+  }
+  .card {
+    background: rgba(255,255,255,0.72); border: 1px solid rgba(35,32,28,0.08);
+    border-radius: 28px; padding: 20px 24px; width: 340px;
+  }
+  .bubble {
+    background: #fff; border: 1px solid rgba(35,32,28,0.08);
+    border-radius: 18px 18px 18px 5px; padding: 12px 16px;
+    font-size: 15px; line-height: 1.5; width: 300px;
+  }
+  .night-panel {
+    background-color: var(--color-night); background-image: var(--gradient-night-veil);
+    border-radius: 28px; padding: 20px 24px; width: 300px;
+    color: var(--color-frost); font-size: 15px; line-height: 1.6;
+  }
+  .night-panel .t { font-family: var(--font-serif); font-size: 21px; font-weight: 600; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet">
+  <p class="eyebrow">Design system</p>
+  <h1 class="title">Althio</h1>
+  <p class="subtitle">Tokens extracted from althio.ai · Charter + Open Runde · warm paper + pastel aurora</p>
+
+  <section>
+    <p class="section-label">Typography</p>
+    <div class="spec"><div class="meta"><b>Display / H1</b><br>Charter 500 · 78px · lh 1.06 · ls −0.025em</div><div class="display">Holds <em>the space between.</em></div></div>
+    <div class="spec"><div class="meta"><b>H2</b><br>Charter 500 · 44–52px · ls −0.02em</div><div class="h2">One hour of therapy.</div></div>
+    <div class="spec"><div class="meta"><b>H4</b><br>Charter 500 · 30px</div><div class="h4">Patients check in, any hour</div></div>
+    <div class="spec"><div class="meta"><b>Pull quote</b><br>Charter 400 italic · 24px</div><div class="pull">3 am counts too. Althio answers.</div></div>
+    <div class="spec"><div class="meta"><b>H5 / card title</b><br>Charter 600 · 21px</div><div class="h5">Clinician supervised</div></div>
+    <div class="spec"><div class="meta"><b>Lead</b><br>Open Runde 400 · 19px · lh 1.6</div><div class="lead">Althio is an AI context layer for clinical teams.</div></div>
+    <div class="spec"><div class="meta"><b>Body</b><br>Open Runde 400 · 17px · lh 1.6</div><div class="body">Progress is made in session and lost in the gap.</div></div>
+    <div class="spec"><div class="meta"><b>Caption / eyebrow</b><br>Open Runde · 12.5px · +0.14em caps</div><div><span class="eyebrow" style="margin:0">Continuity</span> &nbsp; <span class="cap">2 signals · 1 flag · 40-second read</span></div></div>
+  </section>
+
+  <section>
+    <p class="section-label">Color</p>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#fbf7f0"></div><p class="name">Paper</p><p class="hex">#FBF7F0 · page bg</p></div>
+      <div class="swatch"><div class="chip" style="background:#23201c"></div><p class="name">Ink</p><p class="hex">#23201C · text, dark UI</p></div>
+      <div class="swatch"><div class="chip" style="background:#0b0f1e"></div><p class="name">Night</p><p class="hex">#0B0F1E · dark section</p></div>
+      <div class="swatch"><div class="chip" style="background:#edf1fa"></div><p class="name">Frost</p><p class="hex">#EDF1FA · text on dark</p></div>
+      <div class="swatch"><div class="chip" style="background:#7a9ed0"></div><p class="name">Sky</p><p class="hex">#7A9ED0 · accent</p></div>
+      <div class="swatch"><div class="chip" style="background:#a8c6e8"></div><p class="name">Sky soft</p><p class="hex">#A8C6E8</p></div>
+      <div class="swatch"><div class="chip" style="background:#b9b4de"></div><p class="name">Lavender</p><p class="hex">#B9B4DE</p></div>
+      <div class="swatch"><div class="chip" style="background:#d9a08f"></div><p class="name">Clay</p><p class="hex">#D9A08F</p></div>
+      <div class="swatch"><div class="chip" style="background:#e8b7a6"></div><p class="name">Clay soft</p><p class="hex">#E8B7A6</p></div>
+      <div class="swatch"><div class="chip" style="background:#c9af7c"></div><p class="name">Gold</p><p class="hex">#C9AF7C</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Gradients</p>
+    <div class="grads">
+      <div class="grad g-aurora"><span>Aurora wash · pastel radials on paper</span></div>
+      <div class="grad g-text"><span>Accent text · blue, clipped to italic serif</span></div>
+      <div class="grad g-night"><span>Night veil · dark section overlay</span></div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:0">
+    <p class="section-label">Components</p>
+    <div class="row">
+      <button class="btn-dark">Request a demo</button>
+      <button class="btn-ghost">How it works</button>
+      <div class="bubble">“Couldn’t sleep again. The thing with my brother came back.”<br><span class="cap" style="font-size:12px">Tue 11:42 pm · Althio answered</span></div>
+      <div class="night-panel"><p class="t">Althio, all week</p>Radius 28 · frost text · veil gradient</div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

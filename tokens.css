@@ -1,0 +1,89 @@
+/* Althio design tokens — extracted from althio.ai (2026-08-16) */
+
+@font-face {
+  font-family: "Open Runde";
+  src: url("https://cdn.jsdelivr.net/gh/lauridskern/open-runde@1.0.1/src/web/OpenRunde-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Runde";
+  src: url("https://cdn.jsdelivr.net/gh/lauridskern/open-runde@1.0.1/src/web/OpenRunde-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Runde";
+  src: url("https://cdn.jsdelivr.net/gh/lauridskern/open-runde@1.0.1/src/web/OpenRunde-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Runde";
+  src: url("https://cdn.jsdelivr.net/gh/lauridskern/open-runde@1.0.1/src/web/OpenRunde-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  /* Type families */
+  --font-serif: Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-sans: "Open Runde", -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif;
+
+  /* Core neutrals */
+  --color-paper: #fbf7f0;        /* page background */
+  --color-ink: #23201c;          /* primary text, dark surfaces */
+  --color-ink-72: rgba(35, 32, 28, 0.72);
+  --color-ink-60: rgba(35, 32, 28, 0.6);   /* secondary text */
+  --color-ink-34: rgba(35, 32, 28, 0.34);  /* muted text, hairlines */
+  --color-night: #0b0f1e;        /* dark "night" section background */
+  --color-frost: #edf1fa;        /* light text on dark surfaces */
+  --color-white: #ffffff;
+
+  /* Pastel accents */
+  --color-sky: #7a9ed0;
+  --color-sky-soft: #a8c6e8;
+  --color-sky-mid: #8fadd6;
+  --color-lavender: #b9b4de;
+  --color-lavender-mid: #ada5dc;
+  --color-clay: #d9a08f;
+  --color-clay-soft: #e8b7a6;
+  --color-gold: #c9af7c;
+
+  /* Gradients */
+  --gradient-aurora:
+    radial-gradient(44% 40% at 30% 20%, #d9e7f6 0%, transparent 100%),
+    radial-gradient(36% 34% at 74% 46%, #f6e0d8 0%, transparent 100%),
+    radial-gradient(30% 30% at 55% 10%, #e5e3f2 0%, transparent 100%);
+  --gradient-accent-text: linear-gradient(100deg, #5b9be6, #a9c4ee 45%, #6fa5e8);
+  --gradient-night-veil: linear-gradient(rgba(8, 10, 22, 0.55) 0%, rgba(8, 10, 22, 0.18) 42%, rgba(8, 10, 22, 0.58) 100%);
+  --gradient-hairline: linear-gradient(90deg, transparent, rgba(237, 241, 250, 0.35) 12%, rgba(237, 241, 250, 0.35) 88%, transparent);
+
+  /* Type scale (desktop 1440) */
+  --text-display: 78px;   /* h1, serif 500, lh 1.06, ls -0.025em */
+  --text-h2: 52px;        /* serif 500, lh 1.12, ls -0.02em */
+  --text-h2-alt: 44px;    /* serif 500, lh 1.15, ls -0.02em */
+  --text-h3: 40px;        /* serif 500, lh 1.15, ls -0.02em */
+  --text-h4: 30px;        /* serif 500, lh 1.2,  ls -0.015em */
+  --text-pull: 24px;      /* serif 400 italic, lh 1.4 */
+  --text-h5: 21px;        /* serif 600, lh 1.6, ls -0.01em */
+  --text-lead: 19px;      /* sans 400, lh 1.6 */
+  --text-body: 17px;      /* sans 400, lh 1.6 */
+  --text-body-sm: 16px;   /* sans 400, lh 1.6 */
+  --text-ui: 15px;        /* sans 500 (nav), 400 (captions) */
+  --text-button: 14px;    /* sans 500 */
+  --text-caption: 12.5px; /* sans 400, lh 1.6 */
+  --text-eyebrow: 12.5px; /* sans 500, uppercase, ls 0.14em */
+  --text-micro: 12px;     /* sans 400, timestamps */
+
+  /* Radii */
+  --radius-pill: 999px;   /* buttons, chips */
+  --radius-card: 28px;    /* large cards */
+  --radius-panel: 18px;   /* inner panels; chat bubble: 18px 18px 18px 5px */
+  --radius-tile: 14px;    /* small tiles */
+
+  /* Shadows */
+  --shadow-frost-glow: rgba(237, 241, 250, 0.45) 0 0 8px 0;
+  --shadow-focus-ring: rgba(122, 158, 208, 0.38) 0 0 0 1.25px;
+  --shadow-halo: rgba(255, 255, 255, 0.14) 0 0 0 5px, rgba(255, 255, 255, 0.65) 0 0 18px 0;
+}
